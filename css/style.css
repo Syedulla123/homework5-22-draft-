@@ -1,0 +1,338 @@
+body {
+    font-family: 'poppins', serif;
+    margin: 0;
+    padding: 0;
+    font-size: 1em;
+    background-image: url('../images/concrete_seamless.png');
+    background-color: #f1f1f1;
+}
+
+h1 {
+    font-size: 2em;
+    text-align: center;
+    line-height: 2;
+}
+
+h2 {
+    font-size: 1.5em;
+    text-align: center;
+    padding: 5px;
+}
+
+p {
+    padding: 0 30px;
+}
+
+a.skip {
+    background: white;
+    left: 0;
+    padding: 6px;
+    position: absolute;
+    top: -40px;
+    -webkit-transition: top 1s ease-out;
+    -o-transition: top 1s ease-out;
+    transition: top 1s ease-out;
+    z-index: 1;
+}
+
+    a.skip:focus {
+        top: 20px;
+        color: black;
+        -webkit-text-decoration-style: solid;
+        text-decoration-style: solid;
+    }
+
+*:focus {
+    border: 2px solid black;
+}
+
+footer {
+    background-color: black;
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+
+/* Keyframes for animation*/
+
+@-webkit-keyframes logo_enlarge {
+    from {
+        width: 25px;
+    }
+
+    to {
+        width: 475px;
+    }
+}
+
+@keyframes logo_enlarge {
+    from {
+        width: 25px;
+    }
+
+    to {
+        width: 475px;
+    }
+}
+
+#logo {
+    -webkit-animation-name: logo_enlarge;
+    -webkit-animation-duration: 5s;
+    animation-name: logo_enlarge;
+    animation-duration: 5s;
+}
+
+/* Cards! */
+.pricing {
+    min-height: 500px;
+    
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+}
+
+.card {
+    margin: 12px;
+    background: #fff;
+    border-radius: 50px;
+    padding: 0 0 50px 0;
+    
+    -ms-flex-preferred-size: 450px;
+    flex-basis: 400px;
+}
+
+    .card > header {
+        background: #288088;
+        border: 2px solid #45ADAD;
+        padding: 20px 0;
+        border-radius: 50px 50px 0 0;
+    }
+
+    .card > ul {
+        list-style: none;
+        padding: 0;
+    }
+
+        .card > ul li {
+            width: 90%;
+            margin: 20px auto;
+        }
+
+    .card button {
+        width: 90%;
+        height: 40px;
+        border: 0;
+        margin-left: 12px;
+        border-radius: 7px;
+        background: #288080;
+        color: white;
+        font-size: 1em;
+    }
+
+    .card h3 {
+        font-size: 4em;
+        color: white;
+        text-align: center;
+    }
+
+.card_big {
+    -webkit-transform: initial;
+    -ms-transform: initial;
+    transform: initial;
+}
+
+/* Gallery! */
+
+.gallery {
+    min-height: 600px;
+    
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+}
+
+    .gallery > img {
+        border: 10px #50C7C7 solid;
+        margin: 10px;
+        width: 300px;
+    }
+
+/* Navbar */
+header {
+    background: #fff;
+    border-bottom: 3px solid #50C7C7;
+   
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+}
+
+
+
+.nav_links {
+    list-style: none;
+    
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.nav_item a {
+    color: black;
+    text-decoration: none;
+}
+
+    .nav_item a:hover, a:focus {
+        color: #50C7C7;
+        text-decoration: underline;
+        -webkit-text-decoration-style: dotted;
+        text-decoration-style: dotted;
+    }
+
+@media screen and (min-width: 900px) {
+
+    /* Cards! */
+    
+    .pricing {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+        flex-flow: row wrap;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+
+    .card {
+        
+        -ms-flex-preferred-size: 275px;
+        flex-basis: 275px;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+    /* styling for $35 card */
+    .card_big {
+        -webkit-transform: scaleX(1.12);
+        -ms-transform: scaleX(1.12);
+        transform: scaleX(1.12);
+    }
+
+    /* Navbar */
+
+    header {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+    }
+
+    fixed-header {
+        width: 100%;
+        position: fixed;
+    }
+
+    .nav_links {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -ms-flex-pack: distribute;
+        justify-content: space-around;
+    }
+
+    .nav_item a {
+        padding: 10px;
+    }
+}
+
+
+
+@media (prefers-reduced-motion: reduce) {
+    #logo {
+        -webkit-animation: none;
+        animation: none;
+    }
+}
+
+@media print {
+
+     body {
+        font-family: 'arial', helvetica;
+        margin: 0;
+        padding: 0;
+        font-size: 1em;
+        background-color: #f1f1f1;
+    }
+
+    footer {
+        background-color: black;
+        color: white;
+        padding: 30px;
+        text-align: center;
+    }
+
+    .pricing {
+        -webkit-box-align: end;
+        -ms-flex-align: end;
+        align-items: flex-end;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row;
+    }
+
+    .card {
+        border: 2px solid #45ADAD;
+        -ms-flex-preferred-size: 200px;
+        flex-basis: 325px;
+    }
+
+    .gallery {
+        display: none;
+    }
+
+    #gallery {
+        display: none;
+    }
+}
