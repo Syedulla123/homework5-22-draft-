@@ -4,7 +4,7 @@ body {
     padding: 0;
     font-size: 1em;
     background-image: url('../images/concrete_seamless.png');
-    background-color: #f1f1f1;
+    background-color: #f1f1f1; /* backup color for the background image */
 }
 
 h1 {
@@ -53,8 +53,7 @@ footer {
     text-align: center;
 }
 
-/* Keyframes for animation*/
-
+/* Animating the logo with keyframes */
 @-webkit-keyframes logo_enlarge {
     from {
         width: 25px;
@@ -82,10 +81,54 @@ footer {
     animation-duration: 5s;
 }
 
-/* Cards! */
+/* Editing the header tag */
+header {
+    background: #fff;
+    border-bottom: 3px solid #50C7C7;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    position: sticky;
+    top: 0px;
+}
+
+
+    /* Editing the nav_links */
+    .nav_links {
+    list-style: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+/* Styling the links */
+.nav_item a {
+    padding: 10px;
+}
+
+.nav_item a:hover, a:focus {
+    color: #50C7C7;
+    text-decoration: underline;
+    -webkit-text-decoration-style: dotted;
+    text-decoration-style: dotted;
+}
+
+
+/* Editing the card class */
 .pricing {
-    min-height: 500px;
-    
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -101,28 +144,30 @@ footer {
     align-items: center;
     -ms-flex-line-pack: center;
     align-content: center;
+    min-height: 450px;
 }
 
 .card {
     margin: 12px;
     background: #fff;
-    border-radius: 50px;
-    padding: 0 0 50px 0;
-    
+    border-radius: 7px;
+    padding: 0 0 25px 0;
+    border-radius: 50px 50px 0 0;
+
     -ms-flex-preferred-size: 450px;
-    flex-basis: 400px;
+    flex-basis: 450px;
 }
 
     .card > header {
         background: #288088;
         border: 2px solid #45ADAD;
-        padding: 20px 0;
+        padding: 20px 0 20px 0;
         border-radius: 50px 50px 0 0;
     }
 
     .card > ul {
         list-style: none;
-        padding: 0;
+        padding-left: 5px;
     }
 
         .card > ul li {
@@ -134,7 +179,7 @@ footer {
         width: 90%;
         height: 40px;
         border: 0;
-        margin-left: 12px;
+        margin-left: 5%;
         border-radius: 7px;
         background: #288080;
         color: white;
@@ -147,17 +192,10 @@ footer {
         text-align: center;
     }
 
-.card_big {
-    -webkit-transform: initial;
-    -ms-transform: initial;
-    transform: initial;
-}
 
-/* Gallery! */
+/* Editing the gallery class */
 
 .gallery {
-    min-height: 600px;
-    
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -173,6 +211,7 @@ footer {
     align-items: center;
     -ms-flex-line-pack: center;
     align-content: center;
+    min-height: 600px;
 }
 
     .gallery > img {
@@ -181,55 +220,11 @@ footer {
         width: 300px;
     }
 
-/* Navbar */
-header {
-    background: #fff;
-    border-bottom: 3px solid #50C7C7;
-   
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -ms-flex-line-pack: center;
-    align-content: center;
-}
 
-
-
-.nav_links {
-    list-style: none;
-    
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-}
-
-.nav_item a {
-    color: black;
-    text-decoration: none;
-}
-
-    .nav_item a:hover, a:focus {
-        color: #50C7C7;
-        text-decoration: underline;
-        -webkit-text-decoration-style: dotted;
-        text-decoration-style: dotted;
-    }
-
+/* Specifications for when the screen-size is greater than 900px */
 @media screen and (min-width: 900px) {
 
-    /* Cards! */
-    
+    /* Editing the card class */
     .pricing {
         -webkit-box-orient: horizontal;
         -webkit-box-direction: normal;
@@ -241,7 +236,6 @@ header {
     }
 
     .card {
-        
         -ms-flex-preferred-size: 275px;
         flex-basis: 275px;
         -webkit-box-align: center;
@@ -256,7 +250,6 @@ header {
     }
 
     /* Navbar */
-
     header {
         -webkit-box-orient: horizontal;
         -webkit-box-direction: normal;
@@ -265,11 +258,7 @@ header {
         -webkit-box-pack: justify;
         -ms-flex-pack: justify;
         justify-content: space-between;
-    }
-
-    fixed-header {
-        width: 100%;
-        position: fixed;
+        position: sticky;
     }
 
     .nav_links {
@@ -296,6 +285,42 @@ header {
 }
 
 @media print {
+    .pricing {
+        -webkit-box-align: start;
+        -ms-flex-align: start;
+        align-items: flex-start;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row;
+    }
+
+    body {
+        font-family: 'arial', helvetica;
+        margin: 0;
+        padding: 0;
+        font-size: 1em;
+        background-color: #f1f1f1;
+    }
+
+    .card {
+        -ms-flex-preferred-size: 200px;
+        flex-basis: 200px;
+    }
+
+    .gallery {
+        /* spec styles */
+        display: none;
+    }
+
+    #gallery {
+        /* spec styles */
+        display: none;
+    }
+}
+
+
+@media print {
 
      body {
         font-family: 'arial', helvetica;
@@ -313,13 +338,18 @@ header {
     }
 
     .pricing {
-        -webkit-box-align: end;
-        -ms-flex-align: end;
-        align-items: flex-end;
+        -webkit-box-align: start;
+        -ms-flex-align: start;
+        align-items: flex-start;
         -webkit-box-orient: horizontal;
         -webkit-box-direction: normal;
         -ms-flex-direction: row;
         flex-direction: row;
+    }
+
+    .nav_links {
+        -webkit-column-span: all;
+        column-span: all;
     }
 
     .card {
