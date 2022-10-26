@@ -98,7 +98,8 @@ header {
     -ms-flex-line-pack: center;
     align-content: center;
     position: sticky;
-    top: 0px;
+    top: 0;
+    z-index: 999; /* setting z-index of header large so it is not overlapped by other elements */
 }
 
 
@@ -114,7 +115,7 @@ header {
     flex-direction: column;
 }
 
-/* Styling the links */
+/* Styling the nav links */
 .nav_item a {
     padding: 10px;
 }
@@ -145,6 +146,7 @@ header {
     -ms-flex-line-pack: center;
     align-content: center;
     min-height: 450px;
+    z-index: 9;
 }
 
 .card {
@@ -156,6 +158,7 @@ header {
 
     -ms-flex-preferred-size: 450px;
     flex-basis: 450px;
+    z-index: 9;
 }
 
     .card > header {
@@ -163,6 +166,7 @@ header {
         border: 2px solid #45ADAD;
         padding: 20px 0 20px 0;
         border-radius: 50px 50px 0 0;
+        z-index: 9;
     }
 
     .card > ul {
@@ -184,12 +188,14 @@ header {
         background: #288080;
         color: white;
         font-size: 1em;
+        z-index: 9;
     }
 
     .card h3 {
         font-size: 4em;
         color: white;
         text-align: center;
+        z-index: 9;
     }
 
 
@@ -241,6 +247,7 @@ header {
         -webkit-box-align: center;
         -ms-flex-align: center;
         align-items: center;
+        z-index: 9;
     }
     /* styling for $35 card */
     .card_big {
@@ -259,6 +266,8 @@ header {
         -ms-flex-pack: justify;
         justify-content: space-between;
         position: sticky;
+        top: 0;
+        z-index: 999;
     }
 
     .nav_links {
@@ -286,6 +295,11 @@ header {
 
 /* specifications for when the page is printed in portrait mode */
 @media print {
+
+    .body {
+        font-family: 'arial', helvetica;
+    }
+
     .pricing {
         -webkit-box-align: start;
         -ms-flex-align: start;
@@ -302,8 +316,18 @@ header {
         border: 2px solid #45ADDD;
     }
 
+    .nav_links {
+        list-style: none;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+
     .nav_item a {
-        display: table;
         width: 100%;
         -webkit-box-orient: horizontal;
     }
